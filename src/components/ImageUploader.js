@@ -13,7 +13,7 @@ const ImageUploader = ({ onImageUpload }) => {
   };
 
   return (
-    <div>
+    <div className='file-input'>
       <input type="file" accept="image/*" onChange={handleImageUpload} />
     </div>
   );
