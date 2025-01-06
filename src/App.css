@@ -1,0 +1,205 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f8ff; /* Light background color for the body */
+}
+
+h1, h2, h3 {
+  margin: 0;
+  text-align: center; /* Center headings */
+  color: #333; /* Darker color for better contrast */
+  font-weight: normal; /* Avoid bold if causing blur */
+  font-size: 24px; /* Adjust size as necessary */
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+/* Button Styles */
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px; /* Added padding for buttons */
+  border: none; /* Remove default border */
+  color: white; /* Button text color */
+  background-color: #007bff; /* Primary color */
+  transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+button:disabled {
+  background-color: #cccccc; /* Gray for disabled buttons */
+  cursor: not-allowed; /* Change cursor style */
+}
+
+/* Container Styles */
+.container {
+  max-width: 800px; /* Limit width for better readability */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add padding for layout */
+  background-color: white; /* White background for main content */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align items */
+}
+
+/* Label Form Styles */
+.label-form {
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
+  margin-bottom: 20px; /* Space below the label form */
+  padding: 20px; /* Padding for better spacing */
+  border: 1px solid #007bff; /* Border for the label form */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background for the form */
+}
+
+/* Header for Label Form */
+.label-form h2 {
+  color: #007bff; /* Primary color for section headers */
+  padding: 10px 0; /* Space above and below headers */
+}
+
+/* Input Field Styles */
+input[type="text"],
+input[type="file"],
+select {
+  padding: 12px 15px; /* More padding for comfort */
+  border: 1px solid #007bff; /* Consistent border color */
+  border-radius: 5px; /* Rounded corners */
+  width: 100%; /* Full width of the form */
+  max-width: 400px; /* Limit max width for better appearance */
+  margin-bottom: 15px; /* Space below inputs */
+  font-size: 16px; /* Increase font size */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #0056b3; /* Darker border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft glow effect */
+}
+
+/* Centering Styles for Inputs and Button */
+.label-form form {
+  display: flex; /* Use flexbox for centering */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
+}
+
+/* Adjust Button Styles */
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 15px; /* Added padding for buttons */
+  border: none; /* Remove default border */
+  color: white; /* Button text color */
+  background-color: #007bff; /* Primary color */
+  transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
+  width: 100%; /* Full width for the button */
+  max-width: 400px; /* Limit max width for better appearance */
+}
+
+/* Annotation Canvas Styles */
+.annotation-canvas {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #e6f7ff; /* Light blue background for the canvas */
+  background-size: contain;
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;
+  cursor: crosshair;
+  display: flex; /* Enable flexbox for centering */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin-bottom: 20px; /* Space below the canvas */
+}
+
+/* Centering Images in Annotation Canvas */
+.annotation-canvas img {
+  max-width: 100%; /* Ensure the image is responsive */
+  max-height: 100%; /* Ensure the image is responsive */
+  margin: auto; /* Center the image */
+  display: block; /* Make sure the image is a block element */
+  border: none; /* Remove any border */
+}
+
+/* Additional Styling for Forms */
+.image-uploader {
+  margin-bottom: 20px; /* Space between sections */
+}
+
+.project-form h2{
+    color: #007bff; /* Primary color for section headers */
+    padding: 10px 0; /* Space above and below headers */
+}
+
+/* Annotation Box Styles */
+.annotation-box {
+  position: absolute;
+  border: 2px solid red;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.annotation-box span {
+  color: black; /* Text color for label */
+  z-index: 1;
+}
+
+.annotation-box button {
+  background: transparent; 
+  border: none; 
+  color: red; 
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1;
+}
+
+/* Image Uploader Styles */
+.image-uploader {
+  margin-bottom: 20px; /* Space below the uploader */
+}
+
+.image-uploader input[type="file"] {
+  padding: 10px; /* Padding for the file input */
+  border: 1px solid #007bff; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  background-color: white; /* Background color */
+  cursor: pointer; /* Pointer cursor for file input */
+}
+
+/* Project Form Styles */
+.project-form {
+  margin-bottom: 50px; 
+  margin-top: 50px; 
+}
+/* Button Container Styles */
+.button-container {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center the buttons horizontally */
+  margin: 20px 0; /* Add some margin above and below */
+}
+
+/* Button Styles */
+.button-container button {
+  width: 120px; /* Set a fixed width for the buttons */
+  margin: 0 10px; /* Add some spacing between buttons */
+}
