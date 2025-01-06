@@ -1,52 +1,73 @@
-// import logo from './logo.svg';
-// import './App.css';
+// import React from 'react';
+// import Header from './components/Header';
+// import Footer from './components/Footer';
+// import Hero from './components/Hero';
+// import Features from './components/Features';
+// import AnnotationPlatform from './components/AnnotationPlatform';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // function App() {
 //   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
+//     <Router>
+//       <Header />
+//       <Routes>
+//         <Route path="/" element={
+//           <>
+//             <Hero />
+//             <Features />
+//           </>
+//         } />
+//         <Route path="/annotation-platform" element={<AnnotationPlatform />} />
+//         <Route path="/AnnotationPlatform" element={<AnnotationPlatform />} /> {/* Additional Route */}
+//       </Routes>
+//       <Footer />
+//     </Router>
 //   );
 // }
 
 // export default App;
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import AnnotationPlatform from './components/AnnotationPlatform';
+import Preloader from './components/Preloader';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Set to desired loading time (e.g., 3 seconds)
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
+
   return (
     <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Hero />
-            <Features />
-          </>
-        } />
-        <Route path="/annotation-platform" element={<AnnotationPlatform />} />
-        <Route path="/AnnotationPlatform" element={<AnnotationPlatform />} /> {/* Additional Route */}
-      </Routes>
-      <Footer />
+      {loading ? (
+        <Preloader /> // Show the preloader while loading
+      ) : (
+        <>
+          <Header />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Hero />
+                <Features />
+              </>
+            } />
+            <Route path="/annotation-platform" element={<AnnotationPlatform />} />
+            <Route path="/AnnotationPlatform" element={<AnnotationPlatform />} /> {/* Additional Route */}
+          </Routes>
+          <Footer />
+        </>
+      )}
     </Router>
   );
 }
