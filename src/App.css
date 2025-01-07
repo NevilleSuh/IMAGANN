@@ -1,154 +1,129 @@
-/* Global Styles */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f0f8ff; /* Light background color for the body */
+  background-color: #f0f8ff;
 }
 
 h1, h2, h3 {
   margin: 0;
-  text-align: center; /* Center headings */
-  color: #333; /* Darker color for better contrast */
-  font-weight: normal; /* Avoid bold if causing blur */
-  font-size: 24px; /* Adjust size as necessary */
+  text-align: center; 
+  color: #333; 
+  font-weight: normal; 
+  font-size: 24px;
 }
 
 p {
   margin: 0.5rem 0;
 }
 
-/* Button Styles */
 button {
   cursor: pointer;
   border-radius: 5px;
-  padding: 10px 15px; /* Added padding for buttons */
-  border: none; /* Remove default border */
-  color: white; /* Button text color */
-  background-color: #007bff; /* Primary color */
-  transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
+  padding: 10px 15px;
+  border: none;
+  color: white;
+  background-color: #007bff;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 button:hover {
-  background-color: #0056b3; /* Darker shade for hover effect */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 button:disabled {
-  background-color: #cccccc; /* Gray for disabled buttons */
-  cursor: not-allowed; /* Change cursor style */
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
-/* Container Styles */
 .container {
-  max-width: 800px; /* Limit width for better readability */
-  margin: 0 auto; /* Center the container */
-  padding: 20px; /* Add padding for layout */
-  background-color: white; /* White background for main content */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Form Styles */
 form {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center align items */
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Label Form Styles */
 .label-form {
-  display: flex; /* Use flexbox for centering */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center align items */
-  margin-bottom: 20px; /* Space below the label form */
-  padding: 20px; /* Padding for better spacing */
-  border: 1px solid #007bff; /* Border for the label form */
-  border-radius: 8px; /* Rounded corners */
-  background-color: #f9f9f9; /* Light background for the form */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #007bff;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-/* Header for Label Form */
 .label-form h2 {
-  color: #007bff; /* Primary color for section headers */
-  padding: 10px 0; /* Space above and below headers */
+  color: #007bff;
+  padding: 10px 0;
 }
 
-/* Input Field Styles */
 input[type="text"],
 input[type="file"],
 select {
-  padding: 12px 15px; /* More padding for comfort */
-  border: 1px solid #007bff; /* Consistent border color */
-  border-radius: 5px; /* Rounded corners */
-  width: 100%; /* Full width of the form */
-  max-width: 400px; /* Limit max width for better appearance */
-  margin-bottom: 15px; /* Space below inputs */
-  font-size: 16px; /* Increase font size */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  padding: 12px 15px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="text"]:focus,
 select:focus {
-  border-color: #0056b3; /* Darker border on focus */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Soft glow effect */
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Centering Styles for Inputs and Button */
 .label-form form {
-  display: flex; /* Use flexbox for centering */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center align items */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Adjust Button Styles */
-button {
-  cursor: pointer;
-  border-radius: 5px;
-  padding: 10px 15px; /* Added padding for buttons */
-  border: none; /* Remove default border */
-  color: white; /* Button text color */
-  background-color: #007bff; /* Primary color */
-  transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
-  width: 100%; /* Full width for the button */
-  max-width: 400px; /* Limit max width for better appearance */
-}
-
-/* Annotation Canvas Styles */
 .annotation-canvas {
   position: relative;
   width: 100%;
   height: 500px;
-  background-color: #e6f7ff; /* Light blue background for the canvas */
+  background-color: #e6f7ff;
   background-size: contain;
-  background-position: center; /* Center the background image */
+  background-position: center;
   background-repeat: no-repeat;
   cursor: crosshair;
-  display: flex; /* Enable flexbox for centering */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  margin-bottom: 20px; /* Space below the canvas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-/* Centering Images in Annotation Canvas */
 .annotation-canvas img {
-  max-width: 100%; /* Ensure the image is responsive */
-  max-height: 100%; /* Ensure the image is responsive */
-  margin: auto; /* Center the image */
-  display: block; /* Make sure the image is a block element */
-  border: none; /* Remove any border */
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  display: block;
+  border: none;
 }
 
-/* Additional Styling for Forms */
 .image-uploader {
-  margin-bottom: 20px; /* Space between sections */
+  margin-bottom: 20px;
 }
 
-.project-form h2{
-    color: #007bff; /* Primary color for section headers */
-    padding: 10px 0; /* Space above and below headers */
+.project-form h2 {
+  color: #007bff;
+  padding: 10px 0;
 }
 
-/* Annotation Box Styles */
 .annotation-box {
   position: absolute;
   border: 2px solid red;
@@ -160,7 +135,7 @@ button {
 }
 
 .annotation-box span {
-  color: black; /* Text color for label */
+  color: black;
   z-index: 1;
 }
 
@@ -173,41 +148,137 @@ button {
   z-index: 1;
 }
 
-/* Image Uploader Styles */
-.image-uploader {
-  margin-bottom: 20px; /* Space below the uploader */
-}
-
 .image-uploader input[type="file"] {
-  padding: 10px; /* Padding for the file input */
-  border: 1px solid #007bff; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  background-color: white; /* Background color */
-  cursor: pointer; /* Pointer cursor for file input */
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
 }
 
-/* Project Form Styles */
 .project-form {
   margin-bottom: 50px; 
   margin-top: 50px; 
 }
 
-/* Button Container Styles */
 .button-container {
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center the buttons horizontally */
-  margin: 20px 0; /* Add some margin above and below */
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-/* Button Styles */
 .button-container button {
-  width: 120px; /* Set a fixed width for the buttons */
-  margin: 0 10px; /* Add some spacing between buttons */
+  width: 120px;
+  margin: 0 10px;
 }
 
-/* File input styles */
 .file-input {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+}
+
+footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  padding: 1rem 2rem;
+  background-color: #282c34;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.header-title {
+  font-size: 2.5rem; /* Increased font size */
+  font-weight: bold; /* Ensure it's bold */
+  margin: 0;
+  color: #61dafb; /* Bright color for visibility */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for contrast */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  color: #61dafb; /* Same bright color as the title */
+  text-decoration: none;
+  font-size: 1.2rem; /* Slightly larger text */
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffffff; /* Change color on hover */
+}
+
+.features-section {
+  padding: 2rem;
+  background-color: #f0f8ff; /* Light background for contrast */
+  text-align: center;
+}
+
+.features-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between; /* Space out the feature cards evenly */
+  align-items: flex-start;
+}
+
+.feature-card {
+  background-color: #ffffff; /* Base color for the cards */
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 1rem;
+  flex: 1; /* Allow cards to grow equally */
+  height: 250px; /* Set a fixed height for the cards */
+  transition: transform 0.3s;
+}
+
+/* Individual feature card background colors */
+.feature-card:nth-child(1) {
+  background-color: #e6f7ff; /* Light blue */
+}
+
+.feature-card:nth-child(2) {
+  background-color: #d1e7dd; /* Light green */
+}
+
+.feature-card:nth-child(3) {
+  background-color: #fff3cd; /* Light yellow */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  color: #007bff; /* Primary color for titles */
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  color: #666; /* Subtle color for descriptions */
 }
