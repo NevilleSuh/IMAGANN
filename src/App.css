@@ -198,11 +198,11 @@ footer {
 }
 
 .header-title {
-  font-size: 2.5rem; /* Increased font size */
-  font-weight: bold; /* Ensure it's bold */
+  font-size: 2.5rem;
+  font-weight: bold;
   margin: 0;
-  color: #61dafb; /* Bright color for visibility */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Added text shadow for contrast */
+  color: #61dafb;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .nav-list {
@@ -217,19 +217,19 @@ footer {
 }
 
 .nav-link {
-  color: #61dafb; /* Same bright color as the title */
+  color: #61dafb;
   text-decoration: none;
-  font-size: 1.2rem; /* Slightly larger text */
+  font-size: 1.2rem;
   transition: color 0.3s;
 }
 
 .nav-link:hover {
-  color: #ffffff; /* Change color on hover */
+  color: #ffffff;
 }
 
 .features-section {
   padding: 2rem;
-  background-color: #f0f8ff; /* Light background for contrast */
+  background-color: #f0f8ff;
   text-align: center;
 }
 
@@ -241,32 +241,31 @@ footer {
 
 .features-container {
   display: flex;
-  justify-content: space-between; /* Space out the feature cards evenly */
+  justify-content: space-between;
   align-items: flex-start;
 }
 
 .feature-card {
-  background-color: #ffffff; /* Base color for the cards */
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin: 1rem;
-  flex: 1; /* Allow cards to grow equally */
-  height: 250px; /* Set a fixed height for the cards */
+  flex: 1;
+  height: 250px;
   transition: transform 0.3s;
 }
 
-/* Individual feature card background colors */
 .feature-card:nth-child(1) {
-  background-color: #e6f7ff; /* Light blue */
+  background-color: #e6f7ff;
 }
 
 .feature-card:nth-child(2) {
-  background-color: #d1e7dd; /* Light green */
+  background-color: #d1e7dd;
 }
 
 .feature-card:nth-child(3) {
-  background-color: #fff3cd; /* Light yellow */
+  background-color: #fff3cd;
 }
 
 .feature-card:hover {
@@ -275,10 +274,55 @@ footer {
 
 .feature-title {
   font-size: 1.5rem;
-  color: #007bff; /* Primary color for titles */
+  color: #007bff;
   margin-bottom: 0.5rem;
 }
 
 .feature-description {
-  color: #666; /* Subtle color for descriptions */
+  color: #666;
+}
+
+.hero-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f7f7f7;
+  height: 5cm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-slogan {
+  font-size: 1.2rem;
+  color: #666;
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 10s linear forwards;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
