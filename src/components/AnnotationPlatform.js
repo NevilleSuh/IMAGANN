@@ -3,13 +3,16 @@ import ProjectForm from './ProjectForm';
 import LabelForm from './LabelForm';
 import ImageUploader from './ImageUploader';
 import AnnotationCanvas from './AnnotationCanvas';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 const AnnotationPlatform = () => {
-  const [project, setProject] = useState(null);
   const [labels, setLabels] = useState([]);
   const [images, setImages] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [annotations, setAnnotations] = useState([]); // Array for annotations
+  const location = useLocation();
+  const successMessage = location.state?.successMessage;
 
   const handleImageUpload = (imageData) => {
     setImages(prevImages => [...prevImages, imageData]);
@@ -141,39 +144,57 @@ const AnnotationPlatform = () => {
     document.body.removeChild(a);
   };
 
+  const handleSaveImage = async () => {
+    const imageData = images[currentImageIndex];
+    const projectId = localStorage.getItem('projectId'); // Get the project ID from local storage
+    const formData = new FormData();
+    formData.append('image', imageData);
+
+    if (!projectId) {
+      console.error('Project ID is null');
+      return;
+    }
+    try {
+      const response = await axios.post(`http://localhost:8000/api/projects/${projectId}/images`, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        }
+      });
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <div>
       {/* <h1>Image Annotation Platform</h1> */}
-      {!project ? (
-        <ProjectForm setProject={setProject} />
-      ) : (
-        <>
-          <LabelForm setLabels={setLabels} />
-          <ImageUploader onImageUpload={handleImageUpload} />
-          {images.length > 0 && (
-            <AnnotationCanvas 
-              image={images[currentImageIndex]} 
-              labels={labels} 
-              annotations={annotations[currentImageIndex] || []} // Pass only current image annotations
-              onAddAnnotation={handleAddAnnotation} 
-              onDeleteAnnotation={handleDeleteAnnotation}
-              onEditAnnotation={handleEditAnnotation}
-            />
-          )}
-          <div className="button-container">
-            <button onClick={handlePreviousImage} disabled={currentImageIndex === 0}>
-              &#9664; {/* Left arrow (Previous) */}
-            </button>
-            <button onClick={handleNextImage} disabled={currentImageIndex === images.length - 1}>
-              &#9654; {/* Right arrow (Next) */}
-            </button>
-            <button onClick={handleExportPascalVOC}>Export to Pascal VOC</button>
-            <button onClick={handleExportCOCO}>Export to COCO</button>
-          </div>
-        </>
+      {successMessage && <p style={{ color: 'green' }}>{successMessage}</p>}
+      <LabelForm setLabels={setLabels} />
+      <ImageUploader onImageUpload={handleImageUpload} />
+      {images.length > 0 && (
+        <AnnotationCanvas 
+          image={images[currentImageIndex]} 
+          labels={labels} 
+          annotations={annotations[currentImageIndex] || []} // Pass only current image annotations
+          onAddAnnotation={handleAddAnnotation} 
+          onDeleteAnnotation={handleDeleteAnnotation}
+          onEditAnnotation={handleEditAnnotation}
+        />
       )}
+      <div className="button-container">
+        <button onClick={handlePreviousImage} disabled={currentImageIndex === 0}>
+          &#9664; {/* Left arrow (Previous) */}
+        </button>
+        <button onClick={handleNextImage} disabled={currentImageIndex === images.length - 1}>
+          &#9654; {/* Right arrow (Next) */}
+        </button>
+        <button onClick={handleSaveImage}>Save Image</button>
+        <button onClick={handleExportPascalVOC}>Export to Pascal VOC</button>
+        <button onClick={handleExportCOCO}>Export to COCO</button>
+      </div>
     </div>
   );
+
 };
 
 export default AnnotationPlatform;

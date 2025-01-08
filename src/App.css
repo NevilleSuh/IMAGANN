@@ -124,6 +124,14 @@ select:focus {
   padding: 10px 0;
 }
 
+.project-form textarea{
+  width: 31%;
+  height: 60px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border-color: #007bff;
+}
+
 .annotation-box {
   position: absolute;
   border: 2px solid red;
