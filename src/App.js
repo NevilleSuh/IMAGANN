@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Features from './components/Features';
 import AnnotationPlatform from './components/AnnotationPlatform';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProjectForm from './components/ProjectForm';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
           </>
         } />
         <Route path="/annotation-platform" element={<AnnotationPlatform />} />
-        <Route path="/AnnotationPlatform" element={<AnnotationPlatform />} /> {/* Additional Route */}
+        <Route path="/project-form" element={<ProjectForm />} /> {/* Additional Route */}
       </Routes>
       <Footer />
     </Router>

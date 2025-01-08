@@ -9,7 +9,7 @@ function Hero() {
                 <div className="marquee">
                     <p className="hero-slogan">Where Imagination Meets Annotations...</p>
                 </div>
-                <Link to='/AnnotationPlatform'>
+                <Link to='/project-form'>
                     <button className="get-started-button">Get Started</button>
                 </Link>
             </div>
